@@ -8,7 +8,9 @@ app.controller('mainCtrl', function($scope, $http) {
     $http.get($scope.hotStoriesAPI)
     	.success(function(hotStories) {
         	hotStories.forEach(function(hotStory) {
-	            $scope.headline = hotStory.headline;
+	            // $scope.headline = hotStory.headline;
+	            $scope.headline = hotStory.headline.substring(0,35) + 
+	            "...";
 	            $scope.storyLink = hotStory.link;
 	            $scope.discussionLink = hotStory.storyLink;
 	            $scope.authorPicture = hotStory.author.picture;
@@ -17,8 +19,9 @@ app.controller('mainCtrl', function($scope, $http) {
 	                $scope.authorName = "unknown"
 	            }
 	            $scope.upVotes = hotStory.rank;
+
 	            $scope.timePosted = new Date(hotStory.timePosted).toGMTString().slice(0, -13);
-	            $scope.timePosted = "Posted on: " + $scope.timePosted;
+	            console.log($scope.timePosted);
 	            $scope.res.push({
 	                headline: $scope.headline,
 	                storyLink: $scope.storyLink,
@@ -26,10 +29,9 @@ app.controller('mainCtrl', function($scope, $http) {
 	                authorPicture: hotStory.author.picture,
 	                authorName: $scope.authorName,
 	                upVotes: hotStory.rank,
-	                timePosted: new Date(hotStory.timePosted).toGMTString().slice(0, -13),
 	                timePosted: $scope.timePosted
 	            })
         })
-        console.log($scope.res)
+        // console.log($scope.res)
     })
 })

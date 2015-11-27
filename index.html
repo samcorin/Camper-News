@@ -1,9 +1,5 @@
 <!-- 
-
-
-https://binarymuse.github.io/ngInfiniteScroll/demo_basic.html
-
-font-awesome
+- https://binarymuse.github.io/ngInfiniteScroll/demo_basic.html
 
  -->
 <!DOCTYPE html>
@@ -13,78 +9,44 @@ font-awesome
     <meta charset="utf-8">
     <title>Bootsrtap For Beginners</title>
     <meta name="description" content="Hello World">
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <!-- Optional theme -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<!-- 
-
-
-Angular or jQuery for repeating????
-
-
-
- -->
 
 <body ng-app="App" ng-controller="mainCtrl">
     <header>
-        <div class="jumbotron">
-            <div class="container">
-                <h1>Hello World</h1>
-                <h3>Controlling Grid System</h3>
+        <div class="jumbotron" style="background: none;">
+            <div class="container text-center">
+                <h1>Camper News</h1>
+                <h3>Get the latest new straight from the Freecodecamp community!</h3>
             </div>
         </div>
     </header>
     <div class="container-fluid">
         <div class="row">
-            <div ng-repeat="i in res | limitTo:16" class="col-xs-6 col-sm-4 col-md-3 col-lg-3 fix">
-            <!-- 
-                Row within a row, or col within a col, 
-             -->
-                <div class="container-fluid">
-                    <div class="box-wrapper">
-                        <div class="box">
-                            <div class="avatar">
-                                <!-- <img src="http://remtsoy.com/experiments/user_card/img/avatar.jpg"> -->
-                                <img src="{{i.authorPicture}}" alt="">
-                            </div>
-                            <div class="box-inner">
-                                <h3 class="name">{{i.authorName}}</h3>
-                                <h4 class="occupation">interaction designer</h4>
-                                <p class="location"><i class="fa fa-map-marker"></i>Austin, Texas</p>
-                                <p class="posted">{{i.timePosted}}</p>
-                                <!-- <h3 class="followers-title">2.5k+</h3> -->
-                            </div>
-                            <ul class="social-list">
-                                <li>
-                                    <a href="#" class="fa fa-facebook"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fa fa-dribbble"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fa fa-twitter"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fa fa-pinterest"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fa fa-linkedin"></a>
-                                </li>
-                            </ul>
+            <div class="col-md-12">
+                <div ng-repeat="i in res | limitTo:32" class=" col-xs-6 col-sm-4 col-md-3 col-lg-3 fix">
+             <div class="container-fluid">
+                 
+             
+                    <div class="box">
+                        <div class="avatar">
+                            <img src="{{i.authorPicture}}" alt="">
+                        </div>
+                        <div class="box-inner">
+                            <a href="{{i.storyLink}}"><h4 class="headline">{{i.headline}}</h4></a>
+                            <p class="name">by {{i.authorName}}</p>
+                            <p class="location"><i class="fa fa-map-marker"></i> Austin, Texas <i class="fa fa-heart like"> {{ i.upVotes }}</i></p>
+                            <p class="posted">Posted on: {{i.timePosted}}</p>
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
-            <!-- <div class="clearfix hidden-md hidden-lg"></div> -->
-            <!-- <div class="col-xs-12 col-sm-4 col-md-3">
-                <div class="well">First coloum Hello guys my name is Lalit and if you like my videos please subscribe tio my channel</div>
-            </div> -->
         </div>
     </div>
-    <!-- <div ng-repeat="i in res | limitTo:16" class="col-xs-12 col-sm-4 col-md-3"> -->
     <!-- <div data-ng-app="App" data-ng-init="names=['Jani','Hege','Kai']">
       <p>Looping with ng-repeat:</p>
       <ul>
@@ -94,19 +56,19 @@ Angular or jQuery for repeating????
       </ul>
     </div> -->
     <footer>
-        <div class="container">
+        <div class="container-fluid">
             <hr>
-            <p>
+            <div class="col-md-12">
+                
+            </div>
+            <p class="col-md-offset-4">
                 <small style="margin-right:20px"><a href="http://facebook.com/askorama">Like me</a> On facebook</small>
-                <small style="margin-right:20px"><a href="http://twitter.com/wiredwiki">Ask whatever </a> On Twitter</small>
-                <small><a href="http://youtube.com/wiredwiki">Subscribe me</a> On Youtube</small>
             </p>
         </div>
     </footer>
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular.min.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/script.js"></script>
 </body>
 
 </html>
