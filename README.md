@@ -2,4 +2,4 @@
 
 ## Work in progress
 
-![alt](<img src="https://github.com/samcorin/Camper-News/raw/master/img/Bootsrtap" width="200px">)
+![alt](<img src="https://raw.githubusercontent.com/samcorin/Camper-News/master/img/Bootsrtap_For_Beginners.png" width="200px">)
